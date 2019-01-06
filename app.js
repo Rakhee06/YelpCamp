@@ -9,14 +9,15 @@ var express     = require("express"),
     Campground  = require("./models/campground"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
-    seedDB      = require("./seeds")
+    seedDB      = require("./seeds");
     
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes      = require("./routes/index")
+    indexRoutes      = require("./routes/index");
  
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
+// var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
+var url = process.env.DATABASEURL || "mongodb://yelcamp-web:yelpcamp123@ds251622.mlab.com:51622/yelpcamp-webdev";
 mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended: true}));
